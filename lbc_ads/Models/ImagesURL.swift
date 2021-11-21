@@ -19,8 +19,8 @@ struct ImagesURL: Codable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
-        small = try values.decode(String.self, forKey: .small)
-        thumb = try values.decode(String.self, forKey: .thumb)
+        small = try? values.decode(String.self, forKey: .small)
+        thumb = try? values.decode(String.self, forKey: .thumb)
     }
     
 }
